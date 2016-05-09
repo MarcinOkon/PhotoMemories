@@ -1,0 +1,3 @@
+C:\Users\okon\OneDrive\Dokumente\Visual Studio 2015\Projects\PhotosAlbumUploader\PhotoMemories\bin\Debug\GooglePhotosUploader.exe.config
+C:\Users\okon\OneDrive\Dokumente\Visual Studio 2015\Projects\PhotosAlbumUploader\PhotoMemories\obj\Debug\GooglePhotosUploader.exe
+C:\Users\okon\OneDrive\Dokumente\Visual Studio 2015\Projects\PhotosAlbumUploader\PhotoMemories\obj\Debug\GooglePhotosUploader.pdb
