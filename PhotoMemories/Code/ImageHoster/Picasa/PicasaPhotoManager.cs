@@ -68,7 +68,9 @@ namespace GooglePhotosUploader.Code
             {
                 if (fileStream.Length > 1)
                 {
-                    return (PicasaProject) serializer.Deserialize(fileStream);
+                    var existingPicasaProject = (PicasaProject) serializer.Deserialize(fileStream);
+                    existingPicasaProject.Update();
+                    return existingPicasaProject;
                 }
                 var picasaProject = new PicasaProject(usernames);
                 serializer.Serialize(fileStream, picasaProject);

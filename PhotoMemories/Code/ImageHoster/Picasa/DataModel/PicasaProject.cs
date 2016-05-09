@@ -8,6 +8,8 @@ namespace GooglePhotosUploader.Code.ImageHoster.Picasa.DataModel
 {
     public class PicasaProject
     {
+        public List<PicasaUser> UserCollection { get; set; }
+
         public PicasaProject()
         {
 
@@ -18,6 +20,9 @@ namespace GooglePhotosUploader.Code.ImageHoster.Picasa.DataModel
             UserCollection = userNames.Select(username => new PicasaUser(username)).ToList();
         }
 
-        public List<PicasaUser> UserCollection { get; set; }
+        public void Update()
+        {
+            UserCollection.ForEach(user => user.Update());
+        }
     }
 }

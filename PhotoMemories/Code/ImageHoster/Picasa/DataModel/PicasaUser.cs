@@ -36,5 +36,10 @@ namespace GooglePhotosUploader.Code.ImageHoster.Picasa.DataModel
             var filteredAlbums = albumCollection.Where(album => album.Title != "Automatische Sicherung" && !album.Title.StartsWith("Hangout:"));
             return filteredAlbums.Where(album => !regex.IsMatch(album.Title)).ToList();
         }
+
+        public void Update()
+        {
+
+        }
     }
 }

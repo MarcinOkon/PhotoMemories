@@ -139,6 +139,7 @@
     <Compile Include="Code\ImageHoster\Picasa\DataModel\PicasaAlbum.cs" />
     <Compile Include="Code\ImageHoster\Picasa\DataModel\PicasaProject.cs" />
     <Compile Include="Code\ImageHoster\Picasa\DataModel\PicasaUser.cs" />
+    <Compile Include="Code\ImageHoster\Picasa\PicasaDateTime.cs" />
     <Compile Include="Code\ImageHoster\Picasa\PicasaPhotoManager.cs" />
     <Compile Include="Code\ImageHoster\Picasa\PicasaXmlProvider.cs" />
     <Compile Include="Code\ImageHoster\Picasa\PicasaSecurity.cs" />

@@ -9,9 +9,15 @@ namespace GooglePhotosUploader.Code.DataModel
 {
     public class PicasaAlbum
     {
+        public string Title { get; set; }
+        public string Id { get; set; }
+        public List<PicasaMedia> MediaCollection { get; set; }
+        public DateTime From { get; set; }
+        public DateTime To { get; set; }
+        public DateTime Updated { get; set; }
+
         public PicasaAlbum()
         {
-
         }
 
         public PicasaAlbum(XElement element, string username)
@@ -19,39 +25,29 @@ namespace GooglePhotosUploader.Code.DataModel
             Title = element.GetValue(XmlNamespaces.Atom, "title");
             Id = element.GetValue(XmlNamespaces.GPhoto, "id");
             MediaCollection = GetMedia(username);
+            From = GetMinDate();
+            To = GetMaxDate();
+            Updated = DateTime.Parse(element.GetValue(XmlNamespaces.Atom, "updated"));
         }
 
-        public string Title { get; set; }
-
-        public string Id { get; set; }
-
-        public List<PicasaMedia> MediaCollection { get; set; }
-
-
-        public DateTime From
+        private DateTime GetMinDate()
         {
-            get
+            var validMedia = GetValidMedia(MediaCollection);
+            if (validMedia.Any())
             {
-                var validMedia = GetValidMedia(MediaCollection);
-                if (validMedia.Any())
-                {
-                    return validMedia.Min(media => media.Date);
-                }
-                return DateTime.MinValue;
+                return validMedia.Min(media => media.Date);
             }
+            return DateTime.MinValue;
         }
 
-        public DateTime To
+        private DateTime GetMaxDate()
         {
-            get
+            var validMedia = GetValidMedia(MediaCollection);
+            if (validMedia.Any())
             {
-                var validMedia = GetValidMedia(MediaCollection);
-                if (validMedia.Any())
-                {
-                    return validMedia.Max(media => media.Date);
-                }
-                return DateTime.MinValue;
+                return validMedia.Max(media => media.Date);
             }
+            return DateTime.MinValue;
         }
 
         private IEnumerable<PicasaMedia> GetValidMedia(IEnumerable<PicasaMedia> mediaCollection)
