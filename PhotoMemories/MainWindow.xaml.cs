@@ -1,9 +1,5 @@
 ﻿using GooglePhotosUploader.Code;
 using System.Windows;
-using System.Linq;
-using System.Collections.Generic;
-using System;
-using GooglePhotosUploader.Code.DataModel;
 
 namespace GooglePhotosUploader
 {

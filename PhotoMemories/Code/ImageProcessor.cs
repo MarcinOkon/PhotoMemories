@@ -1,4 +1,4 @@
-﻿using GooglePhotosUploader.Code.DataModel;
+﻿using GooglePhotosUploader.Code.ImageHoster.Picasa.DataModel;
 using ImageResizer;
 using ImageResizer.Configuration;
 using ImageResizer.Plugins.Watermark;

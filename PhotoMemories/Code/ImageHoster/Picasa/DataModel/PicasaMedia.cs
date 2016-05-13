@@ -1,9 +1,7 @@
-﻿using GooglePhotosUploader.Code.ImageHoster;
-using System;
+﻿using System;
 using System.Xml.Linq;
-using GooglePhotosUploader.Code.ImageHoster.Picasa;
 
-namespace GooglePhotosUploader.Code.DataModel
+namespace GooglePhotosUploader.Code.ImageHoster.Picasa.DataModel
 {
     public class PicasaMedia
     {

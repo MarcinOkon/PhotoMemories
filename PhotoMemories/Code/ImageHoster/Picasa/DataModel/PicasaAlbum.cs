@@ -1,33 +1,35 @@
-﻿using GooglePhotosUploader.Code.ImageHoster;
-using GooglePhotosUploader.Code.ImageHoster.Picasa;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
 
-namespace GooglePhotosUploader.Code.DataModel
+namespace GooglePhotosUploader.Code.ImageHoster.Picasa.DataModel
 {
-    public class PicasaAlbum
+    public class PicasaAlbum : PicasaAlbumBase
     {
-        public string Title { get; set; }
-        public string Id { get; set; }
         public List<PicasaMedia> MediaCollection { get; set; }
         public DateTime From { get; set; }
         public DateTime To { get; set; }
-        public DateTime Updated { get; set; }
 
         public PicasaAlbum()
         {
         }
 
-        public PicasaAlbum(XElement element, string username)
+        public PicasaAlbum(XElement element, string username) : base(element)
         {
-            Title = element.GetValue(XmlNamespaces.Atom, "title");
-            Id = element.GetValue(XmlNamespaces.GPhoto, "id");
+            Init(username);
+        }
+
+        public PicasaAlbum(PicasaAlbumBase albumBase, string username) : base(albumBase)
+        {
+            Init(username);
+        }
+
+        private void Init(string username)
+        {
             MediaCollection = GetMedia(username);
             From = GetMinDate();
             To = GetMaxDate();
-            Updated = DateTime.Parse(element.GetValue(XmlNamespaces.Atom, "updated"));
         }
 
         private DateTime GetMinDate()

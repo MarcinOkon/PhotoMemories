@@ -1,4 +1,4 @@
-﻿using GooglePhotosUploader.Code.DataModel;
+﻿using GooglePhotosUploader.Code.ImageHoster.Picasa.DataModel;
 using System.Collections.Generic;
 using System.Net;
 using System.Threading;

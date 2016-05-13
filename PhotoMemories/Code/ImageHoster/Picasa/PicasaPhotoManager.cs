@@ -1,5 +1,4 @@
-﻿using GooglePhotosUploader.Code.DataModel;
-using GooglePhotosUploader.Code.ImageHoster.Picasa.DataModel;
+﻿using GooglePhotosUploader.Code.ImageHoster.Picasa.DataModel;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -66,18 +65,24 @@ namespace GooglePhotosUploader.Code
             var serializer = new XmlSerializer(typeof(PicasaProject));
             using (var fileStream = new FileStream(filePath, FileMode.OpenOrCreate))
             {
-                if (fileStream.Length > 1)
-                {
-                    var existingPicasaProject = (PicasaProject) serializer.Deserialize(fileStream);
-                    existingPicasaProject.Update();
-                    return existingPicasaProject;
-                }
-                var picasaProject = new PicasaProject(usernames);
+                var picasaProject = GetPicasaProject(usernames, serializer, fileStream);
+                fileStream.SetLength(0);
                 serializer.Serialize(fileStream, picasaProject);
                 return picasaProject;
             }
         }
-        
+
+        private static PicasaProject GetPicasaProject(List<string> usernames, XmlSerializer serializer, FileStream fileStream)
+        {
+            if (fileStream.Length > 1)
+            {
+                var picasaProject = (PicasaProject)serializer.Deserialize(fileStream);
+                picasaProject.Update();
+                return picasaProject;
+            }
+            return new PicasaProject(usernames);
+        }
+
         private static List<PicasaMedia> GetMatchingMedia(List<PicasaMedia> mediaCollection)
         {
             var days = 7;
