@@ -30,13 +30,13 @@ namespace GooglePhotosUploader.Code.ImageHoster.Picasa.DataModel
 
         private static List<PicasaAlbumBase> GetFilteredAlbumCollection(IEnumerable<PicasaAlbumBase> albumCollection)
         {
-            var filteredAlbums = albumCollection.Where(album => album.Title != "Automatische Sicherung" && !album.Title.StartsWith("Hangout:"));
+            var filteredAlbums = albumCollection.Where(album => album.Title != "Automatische Sicherung" && !album.Title.StartsWith("Hangout:") && album.Title != "Auto Backup");
             var regex = new Regex("\\d{4}-\\d{2}-\\d{2}");
             return filteredAlbums.Where(album => !regex.IsMatch(album.Title)).ToList();
         }
         private static List<PicasaAlbum> GetFilteredAlbumCollection(IEnumerable<PicasaAlbum> albumCollection)
         {
-            var filteredAlbums = albumCollection.Where(album => album.Title != "Automatische Sicherung" && !album.Title.StartsWith("Hangout:"));
+            var filteredAlbums = albumCollection.Where(album => album.Title != "Automatische Sicherung" && !album.Title.StartsWith("Hangout:") && album.Title != "Auto Backup");
             var regex = new Regex("\\d{4}-\\d{2}-\\d{2}");
             return filteredAlbums.Where(album => !regex.IsMatch(album.Title)).ToList();
         }
