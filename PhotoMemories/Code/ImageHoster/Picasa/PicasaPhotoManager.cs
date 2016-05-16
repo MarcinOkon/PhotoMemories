@@ -1,5 +1,6 @@
 ﻿using GooglePhotosUploader.Code.DataModel;
 using GooglePhotosUploader.Code.ImageHoster.Picasa.DataModel;
+using PhotoMemories.Code.ImageProcessing;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -26,7 +27,7 @@ namespace GooglePhotosUploader.Code
 
                 SetFilePaths(sortedMedia);
                 MediaDownloader.DownloadFiles(sortedMedia);
-                ImageProcessor.ResizeImages(sortedMedia);
+                ImageProcessor.ProcessImages(sortedMedia);
             }
 
         }

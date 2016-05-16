@@ -7,17 +7,17 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 
-namespace GooglePhotosUploader.Code
+namespace PhotoMemories.Code.ImageProcessing
 {
     class ImageProcessor
     {
-        public static void ResizeImages(IEnumerable<PicasaMedia> mediaList)
+        public static void ProcessImages(IEnumerable<PicasaMedia> mediaList)
         {
             Config config = SetConfig();
 
             foreach (var media in mediaList)
             {
-                ResizeImage(media, config);
+                ProcessImage(media, config);
             }
         }
 
@@ -45,7 +45,7 @@ namespace GooglePhotosUploader.Code
             };
         }
 
-        private static void ResizeImage(PicasaMedia media, Config config)
+        private static void ProcessImage(PicasaMedia media, Config config)
         {
             if (File.Exists(media.FilePath))
             {
