@@ -131,6 +131,8 @@
     <Compile Include="Code\ImageHoster\Picasa\PicasaXmlProvider.cs" />
     <Compile Include="Code\ImageHoster\Picasa\PicasaSecurity.cs" />
     <Compile Include="Code\ImageHoster\XmlManager.cs" />
+    <Compile Include="Code\ImageProcessing\ResizeJob.cs" />
+    <Compile Include="Code\ImageProcessing\WatermarkJob.cs" />
     <Compile Include="Code\ImageProcessing\ImageProcessor.cs" />
     <Compile Include="Code\ImageHoster\Picasa\DataModel\PicasaMedia.cs" />
     <Compile Include="Code\ImageProcessing\ImageProcessorConfig.cs" />
