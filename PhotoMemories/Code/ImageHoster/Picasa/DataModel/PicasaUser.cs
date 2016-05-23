@@ -1,4 +1,5 @@
 ﻿using GooglePhotosUploader.Code.DataModel;
+using PicasaAPI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,13 +28,11 @@ namespace GooglePhotosUploader.Code.ImageHoster.Picasa.DataModel
 
         private List<PicasaAlbum> GetAlbumCollection()
         {
-            var regex = new Regex("\\d{4}-\\d{2}-\\d{2}");
-
-            var userUrl = "https://picasaweb.google.com/data/feed/api/user/default";
-            var entries = PicasaXmlProvider.GetEntries(userUrl, UserName);
+            var entries = RequestManager.GetAlbums(UserName);
             var albumCollection = entries.Select(entry => new PicasaAlbum(entry, UserName));
 
             var filteredAlbums = albumCollection.Where(album => album.Title != "Automatische Sicherung" && !album.Title.StartsWith("Hangout:"));
+            var regex = new Regex("\\d{4}-\\d{2}-\\d{2}");
             return filteredAlbums.Where(album => !regex.IsMatch(album.Title)).ToList();
         }
     }

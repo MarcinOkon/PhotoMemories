@@ -1,5 +1,6 @@
 ﻿using GooglePhotosUploader.Code.ImageHoster;
 using GooglePhotosUploader.Code.ImageHoster.Picasa;
+using PicasaAPI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -61,8 +62,7 @@ namespace GooglePhotosUploader.Code.DataModel
 
         private List<PicasaMedia> GetMedia(string username)
         {
-            var albumUrl = string.Format("https://picasaweb.google.com/data/feed/api/user/default/albumid/{0}?imgmax=1024", Id);
-            var entries = PicasaXmlProvider.GetEntries(albumUrl, username);
+            var entries = RequestManager.GetMedia(username, Id);
             return entries.Select(entry => new PicasaMedia(entry, Title)).ToList();
         }
     }

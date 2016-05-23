@@ -128,7 +128,6 @@
     <Compile Include="Code\ImageHoster\Picasa\DataModel\PicasaProject.cs" />
     <Compile Include="Code\ImageHoster\Picasa\DataModel\PicasaUser.cs" />
     <Compile Include="Code\ImageHoster\Picasa\PicasaPhotoManager.cs" />
-    <Compile Include="Code\ImageHoster\Picasa\PicasaXmlProvider.cs" />
     <Compile Include="Code\ImageHoster\XmlManager.cs" />
     <Compile Include="Code\ImageProcessing\ResizeJob.cs" />
     <Compile Include="Code\ImageProcessing\WatermarkJob.cs" />
@@ -171,6 +170,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <Import Project="..\..\GoogleAuthentication\GoogleAuthentication.projitems" Label="Shared" />
+  <Import Project="..\..\PicasaAPI\PicasaAPI.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
