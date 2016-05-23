@@ -129,7 +129,6 @@
     <Compile Include="Code\ImageHoster\Picasa\DataModel\PicasaUser.cs" />
     <Compile Include="Code\ImageHoster\Picasa\PicasaPhotoManager.cs" />
     <Compile Include="Code\ImageHoster\Picasa\PicasaXmlProvider.cs" />
-    <Compile Include="Code\ImageHoster\Picasa\PicasaSecurity.cs" />
     <Compile Include="Code\ImageHoster\XmlManager.cs" />
     <Compile Include="Code\ImageProcessing\ResizeJob.cs" />
     <Compile Include="Code\ImageProcessing\WatermarkJob.cs" />
@@ -137,7 +136,6 @@
     <Compile Include="Code\ImageHoster\Picasa\DataModel\PicasaMedia.cs" />
     <Compile Include="Code\ImageProcessing\ImageProcessorConfig.cs" />
     <Compile Include="Code\MediaDownloader.cs" />
-    <Compile Include="Code\ImageHoster\Picasa\PicasaConnection.cs" />
     <Compile Include="Code\ImageHoster\XmlNamespaces.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -172,6 +170,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <Import Project="..\..\GoogleAuthentication\GoogleAuthentication.projitems" Label="Shared" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
