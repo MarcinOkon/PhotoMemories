@@ -1,13 +1,9 @@
-﻿using GooglePhotosUploader.Code.DataModel;
-using PicasaAPI;
-using System;
+﻿using PicasaAPI;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
-namespace GooglePhotosUploader.Code.ImageHoster.Picasa.DataModel
+namespace PhotoMemories.Code.ImageHoster.Picasa.DataModel
 {
     public class PicasaUser
     {

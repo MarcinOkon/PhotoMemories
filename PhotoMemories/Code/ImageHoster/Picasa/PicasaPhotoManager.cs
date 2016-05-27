@@ -1,5 +1,4 @@
-﻿using GooglePhotosUploader.Code.DataModel;
-using GooglePhotosUploader.Code.ImageHoster.Picasa.DataModel;
+﻿using PhotoMemories.Code.ImageHoster.Picasa.DataModel;
 using PhotoMemories.Code.ImageProcessing;
 using System;
 using System.Collections.Generic;
@@ -7,7 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Xml.Serialization;
 
-namespace GooglePhotosUploader.Code
+namespace PhotoMemories.Code.ImageHoster.Picasa
 {
     class PicasaPhotoManager
     {

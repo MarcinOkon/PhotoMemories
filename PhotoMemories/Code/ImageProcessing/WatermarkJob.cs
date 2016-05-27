@@ -1,5 +1,5 @@
-﻿using GooglePhotosUploader.Code.DataModel;
-using ImageResizer;
+﻿using ImageResizer;
+using PhotoMemories.Code.ImageHoster.Picasa.DataModel;
 using System;
 
 namespace PhotoMemories.Code.ImageProcessing

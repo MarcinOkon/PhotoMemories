@@ -1,6 +1,6 @@
 ﻿using System.Xml.Linq;
 
-namespace GooglePhotosUploader.Code.ImageHoster
+namespace PhotoMemories.Code
 {
     public static class XmlExtensions
     {

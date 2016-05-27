@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GooglePhotosUploader.Code.ImageHoster.Picasa.DataModel
+namespace PhotoMemories.Code.ImageHoster.Picasa.DataModel
 {
     public class PicasaProject
     {

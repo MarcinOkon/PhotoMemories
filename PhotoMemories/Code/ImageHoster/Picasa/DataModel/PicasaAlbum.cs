@@ -1,12 +1,11 @@
-﻿using GooglePhotosUploader.Code.ImageHoster;
-using GooglePhotosUploader.Code.ImageHoster.Picasa;
+﻿using PhotoMemories.Code;
 using PicasaAPI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
 
-namespace GooglePhotosUploader.Code.DataModel
+namespace PhotoMemories.Code.ImageHoster.Picasa.DataModel
 {
     public class PicasaAlbum
     {

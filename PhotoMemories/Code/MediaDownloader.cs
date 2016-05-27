@@ -1,9 +1,9 @@
-﻿using GooglePhotosUploader.Code.DataModel;
+﻿using PhotoMemories.Code.ImageHoster.Picasa.DataModel;
 using System.Collections.Generic;
 using System.Net;
 using System.Threading;
 
-namespace GooglePhotosUploader.Code
+namespace PhotoMemories.Code
 {
     class MediaDownloader
     {

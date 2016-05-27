@@ -124,11 +124,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Code\UnixDateTimeConverter.cs" />
     <Compile Include="Code\ImageHoster\Picasa\DataModel\PicasaAlbum.cs" />
     <Compile Include="Code\ImageHoster\Picasa\DataModel\PicasaProject.cs" />
     <Compile Include="Code\ImageHoster\Picasa\DataModel\PicasaUser.cs" />
     <Compile Include="Code\ImageHoster\Picasa\PicasaPhotoManager.cs" />
-    <Compile Include="Code\ImageHoster\XmlManager.cs" />
+    <Compile Include="Code\XmlExtensions.cs" />
     <Compile Include="Code\ImageProcessing\ResizeJob.cs" />
     <Compile Include="Code\ImageProcessing\WatermarkJob.cs" />
     <Compile Include="Code\ImageProcessing\ImageProcessor.cs" />

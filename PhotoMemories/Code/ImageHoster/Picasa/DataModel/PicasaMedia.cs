@@ -1,9 +1,9 @@
-﻿using GooglePhotosUploader.Code.ImageHoster;
+﻿using PhotoMemories.Code;
 using PicasaAPI;
 using System;
 using System.Xml.Linq;
 
-namespace GooglePhotosUploader.Code.DataModel
+namespace PhotoMemories.Code.ImageHoster.Picasa.DataModel
 {
     public class PicasaMedia
     {
@@ -16,21 +16,10 @@ namespace GooglePhotosUploader.Code.DataModel
         {
             AlbumTitle = title;
             ImageType = element.GetAttribute(XmlNamespaces.Atom, "content", "type");
-            Date = GetDate(element.GetValue(XmlNamespaces.GPhoto, "timestamp"));
+            Date = UnixDateTimeConverter.ToDateTime(element.GetValue(XmlNamespaces.GPhoto, "timestamp"));
             Id = element.GetValue(XmlNamespaces.GPhoto, "id");
             Url = element.GetElement(XmlNamespaces.Media, "group").GetAttribute(XmlNamespaces.Media, "content", "url");
             FileName = element.GetValue(XmlNamespaces.Atom, "title");
-        }
-
-        private DateTime GetDate(string timestamp)
-        {
-            if (timestamp != null)
-            {
-                var unixTimeStamp = Convert.ToInt64(timestamp);
-                DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
-                return dtDateTime.AddMilliseconds(unixTimeStamp).ToLocalTime();
-            }
-            return DateTime.MinValue;
         }
 
         public void SetFilePath(long index)
