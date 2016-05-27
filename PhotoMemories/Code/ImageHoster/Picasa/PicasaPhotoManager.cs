@@ -24,8 +24,7 @@ namespace PhotoMemories.Code.ImageHoster.Picasa
 
                 var sortedMedia = GetSortedMedia(filteredMedia);
 
-                SetFilePaths(sortedMedia);
-                MediaDownloader.DownloadFiles(sortedMedia);
+                MediaDownloader.GetFiles(sortedMedia);
                 ImageProcessor.ProcessImages(sortedMedia);
             }
 
@@ -37,16 +36,6 @@ namespace PhotoMemories.Code.ImageHoster.Picasa
                 .SelectMany(user => user.AlbumCollection
                 .SelectMany(album => album.MediaCollection))
                 .Where(media => media.Date > DateTime.MinValue).ToList();
-        }
-
-        private static void SetFilePaths(IOrderedEnumerable<PicasaMedia> sortedMedia)
-        {
-            var index = 0;
-            foreach (var media in sortedMedia)
-            {
-                media.SetFilePath(index);
-                index++;
-            }
         }
 
         private static IOrderedEnumerable<PicasaMedia> GetSortedMedia(IEnumerable<PicasaMedia> filteredMedia)

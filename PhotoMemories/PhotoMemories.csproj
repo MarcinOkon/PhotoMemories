@@ -124,6 +124,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Code\CacheManager.cs" />
     <Compile Include="Code\UnixDateTimeConverter.cs" />
     <Compile Include="Code\ImageHoster\Picasa\DataModel\PicasaAlbum.cs" />
     <Compile Include="Code\ImageHoster\Picasa\DataModel\PicasaProject.cs" />

@@ -27,7 +27,7 @@ namespace PhotoMemories.Code.ImageHoster.Picasa.DataModel
             var entries = RequestManager.GetAlbums(UserName);
             var albumCollection = entries.Select(entry => new PicasaAlbum(entry, UserName));
 
-            var filteredAlbums = albumCollection.Where(album => album.Title != "Automatische Sicherung" && !album.Title.StartsWith("Hangout:"));
+            var filteredAlbums = albumCollection.Where(album => album.Title != "Automatische Sicherung" && !album.Title.StartsWith("Hangout:") && album.Title != "Auto Backup");
             var regex = new Regex("\\d{4}-\\d{2}-\\d{2}");
             return filteredAlbums.Where(album => !regex.IsMatch(album.Title)).ToList();
         }
