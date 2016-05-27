@@ -135,7 +135,6 @@
     <Compile Include="Code\ImageHoster\Picasa\DataModel\PicasaMedia.cs" />
     <Compile Include="Code\ImageProcessing\ImageProcessorConfig.cs" />
     <Compile Include="Code\MediaDownloader.cs" />
-    <Compile Include="Code\ImageHoster\XmlNamespaces.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>

@@ -62,21 +62,29 @@ namespace GooglePhotosUploader.Code
 
         private static PicasaProject LoadPicasaProject(List<string> usernames)
         {
-            var filePath = "D:\\photos.xml";
+            string filePath = GetFilePath();
 
             var serializer = new XmlSerializer(typeof(PicasaProject));
             using (var fileStream = new FileStream(filePath, FileMode.OpenOrCreate))
             {
                 if (fileStream.Length > 1)
                 {
-                    return (PicasaProject) serializer.Deserialize(fileStream);
+                    return (PicasaProject)serializer.Deserialize(fileStream);
                 }
                 var picasaProject = new PicasaProject(usernames);
                 serializer.Serialize(fileStream, picasaProject);
                 return picasaProject;
             }
         }
-        
+
+        private static string GetFilePath()
+        {
+            var directoryPath = @"D:\PhotoMemories";
+            Directory.CreateDirectory(directoryPath);
+            var fileName = "photos.xml";
+            return Path.Combine(directoryPath, fileName);
+        }
+
         private static List<PicasaMedia> GetMatchingMedia(List<PicasaMedia> mediaCollection)
         {
             var days = 7;

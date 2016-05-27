@@ -1,4 +1,5 @@
 ﻿using GooglePhotosUploader.Code.ImageHoster;
+using PicasaAPI;
 using System;
 using System.Xml.Linq;
 
@@ -16,6 +17,7 @@ namespace GooglePhotosUploader.Code.DataModel
             AlbumTitle = title;
             ImageType = element.GetAttribute(XmlNamespaces.Atom, "content", "type");
             Date = GetDate(element.GetValue(XmlNamespaces.GPhoto, "timestamp"));
+            Id = element.GetValue(XmlNamespaces.GPhoto, "id");
             Url = element.GetElement(XmlNamespaces.Media, "group").GetAttribute(XmlNamespaces.Media, "content", "url");
             FileName = element.GetValue(XmlNamespaces.Atom, "title");
         }
@@ -34,7 +36,7 @@ namespace GooglePhotosUploader.Code.DataModel
         public void SetFilePath(long index)
         {
             var fileName = string.Format("{0:D5}", index);
-            FilePath = string.Format(@"D:\ImageDestination\{0}.jpg", fileName);
+            FilePath = string.Format(@"D:\PhotoMemories\{0}\{1}.jpg", DateTime.Now.ToString("yyyy-MM-dd"), fileName);
         }
 
         public string ImageType { get; set; }
@@ -48,5 +50,7 @@ namespace GooglePhotosUploader.Code.DataModel
         public string AlbumTitle { get; set; }
 
         public string FileName { get; set; }
+
+        public string Id { get; set; }
     }
 }
