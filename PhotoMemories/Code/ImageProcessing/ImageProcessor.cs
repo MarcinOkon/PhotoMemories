@@ -7,23 +7,12 @@ namespace PhotoMemories.Code.ImageProcessing
 {
     class ImageProcessor
     {
-        public static void ProcessImages(IEnumerable<PicasaMedia> mediaList)
+        public static void ProcessImage(PicasaMedia media, string filePath, Config config)
         {
-            var config = new ImageProcessorConfig();
-
-            foreach (var media in mediaList)
+            if (File.Exists(filePath))
             {
-                ProcessImage(media, config);
-            }
-        }
-
-
-        private static void ProcessImage(PicasaMedia media, Config config)
-        {
-            if (File.Exists(media.FilePath))
-            {
-                config.Build(new ResizeJob(media));
-                config.Build(new WatermarkJob(media));
+                config.Build(new ResizeJob(media, filePath));
+                config.Build(new WatermarkJob(media, filePath));
             }
         }
     }

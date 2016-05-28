@@ -25,7 +25,6 @@ namespace PhotoMemories.Code.ImageHoster.Picasa
                 var sortedMedia = GetSortedMedia(filteredMedia);
 
                 MediaDownloader.GetFiles(sortedMedia);
-                ImageProcessor.ProcessImages(sortedMedia);
             }
 
         }

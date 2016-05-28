@@ -5,7 +5,7 @@ namespace PhotoMemories.Code.ImageProcessing
 {
     class ResizeJob : ImageJob
     {
-        public ResizeJob(PicasaMedia media) : base(media.FilePath, media.FilePath, GetInstructions())
+        public ResizeJob(PicasaMedia media, string filePath) : base(filePath, filePath, GetInstructions())
         {
         }
 

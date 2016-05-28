@@ -6,7 +6,7 @@ namespace PhotoMemories.Code.ImageProcessing
 {
     class WatermarkJob : ImageJob
     {
-        public WatermarkJob(PicasaMedia media) : base(media.FilePath, media.FilePath, GetInstructions(media))
+        public WatermarkJob(PicasaMedia media, string filePath) : base(filePath, filePath, GetInstructions(media))
         {
         }
 
